@@ -9,7 +9,7 @@ export const Result = () => {
   const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
-    const storedAnswers = JSON.parse(localStorage.getItem("quiz")) || [];
+    const storedAnswers = JSON.parse(localStorage.getItem("quizAnswers")) || [];
     setAnswers(storedAnswers);
 
     const savedScore = localStorage.getItem("score");
@@ -30,7 +30,7 @@ export const Result = () => {
         <section className="answer-review">
           {answers.map((ans, i) => (
             <div key={i} className="answer-card">
-              <p><strong>Q{i+1}:</strong> {ans.question}</p>
+              <p><strong>Q{i + 1}:</strong> {ans.question}</p>
               <p className={ans.isCorrect ? "correct" : "wrong"}>
                 Your answer: {ans.selected}
               </p>
