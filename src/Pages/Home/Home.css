@@ -1,0 +1,107 @@
+/* Container for the main content, uses flexbox to place the sidebar next to the quiz cards */
+.main {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  margin-top: 80px;
+  background-color: #1a1a2e;
+  min-height: calc(100vh - 75px);
+  color: white;
+  margin-left: 300px; /* Push content so it doesn’t overlap sidebar */
+}
+
+/* Styles for the sidebar container */
+.sidebar {
+  /* position: fixed; */
+  width: 300px;
+  min-width: 250px; /* Prevents the sidebar from shrinking */
+}
+
+/* Header with the "Filter" and "Clear" button */
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* "Clear" button styling */
+.clear-btn {
+  background: none;
+  border: none;
+  color: #92b4ec;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
+/* General styling for filter sections (Category, Additional Filters) */
+.sidebar h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Style the filter labels (radio buttons and checkboxes) */
+.filter-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.filter-label input[type="radio"],
+.filter-label input[type="checkbox"] {
+  /* Hide default radio and checkbox appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #92b4ec;
+  border-radius: 50%; /* Make radio buttons circular */
+  margin-right: 0.5rem;
+  position: relative;
+  outline: none;
+}
+
+/* Style the inner circle of the checked radio button */
+.filter-label input[type="radio"]:checked::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #92b4ec;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the checkbox */
+.filter-label input[type="checkbox"] {
+  border-radius: 4px; /* Make checkboxes square */
+}
+
+/* Style the checkmark for the checked checkbox */
+.filter-label input[type="checkbox"]:checked::before {
+  content: '✓';
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Styles for the quiz card container */
+.quiz-container {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 cards per row */
+  gap: 0.2rem;
+  align-items: stretch;
+}

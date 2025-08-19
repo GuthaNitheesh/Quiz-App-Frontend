@@ -1,0 +1,10 @@
+.sidebar {
+  position: fixed;        /* Stick it */
+  top: 80px;              /* Below navbar (adjust if navbar is taller) */
+  left: 0;
+  width: 500px;
+  height: calc(100vh - 75px); /* Full height minus navbar */
+  background-color: #0a0f2c;
+  padding: 1rem;
+  overflow-y: auto;       /* Scrollable if filters overflow */
+}
